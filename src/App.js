@@ -3,6 +3,7 @@ import './App.css';
 import React, {Component} from "react";
 import {CardList} from "./components/card-list/card-list.component.jsx";
 import {SearchBox} from "./components/search-box/search-box.component.jsx";
+import Footer from "./components/Footer/Footer";
 
 class App extends Component {
   constructor() {
@@ -10,7 +11,8 @@ class App extends Component {
     this.state = {
       monsters: [
       ],
-      searchField: ""
+      searchField: "",
+      title: ""
 
     };
 
@@ -24,7 +26,7 @@ class App extends Component {
   }
 
   handleChange = (e) => {
-    this.setState({ searchField: e.target.value})
+    this.setState({ searchField: e.target.value,  title: e.target.value})
   }
   render() {
 
@@ -47,6 +49,7 @@ const filteredMonsters = monsters.filter(monster =>
         
   
           </CardList>
+          <Footer/>
       </div>
     );
 
